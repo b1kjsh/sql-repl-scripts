@@ -1,9 +1,10 @@
+use ldms20171
 -- This script will alter columns on tables 2 at a time. There's a much better way to organize this script so that it's easier to understand but I'm not ready to rewrite it. In the top cursor just add a select statement that has the table name up to two columns afterward.
 -- example: select 'tablename','column1','column2'
 -- If you need to add more then just put a union all after your statement and make sure that the select statment starting on line 6 works. If that works, then the rest of the script should work.
 declare @t nvarchar(max), @c nvarchar(max), @cc nvarchar(max), @cn nvarchar(max), @ccn nvarchar(max)
 			declare alt cursor for
-				select t.tbl, t.col1, t.col2, t.col1len, t.col2len from (select 'EnvironSettings' as tbl, 'Name' as col1, '500' as col1len, 'ValueString' as col2, '600' as col2len
+				select t.tbl, t.col1, t.col2, t.col1len, t.col2len from (select 'EnvironSettings' as tbl, 'Name' as col1, '1024' as col1len, 'ValueString' as col2, '600' as col2len
 								union all
 								select 'Services', 'Path', 'max', 'Description', 'max'
 								union all
